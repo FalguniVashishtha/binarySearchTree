@@ -35,16 +35,23 @@ public class BinaryTree
         return bst;
     }
 
-    // create a method name as print , they are printing data
+    // method to print
     public void print(Node root) {
-
         if (root == null) {
             return;
         }
         print(root.left);
-        System.out.println(root.data);
 
-        //null right side
+        System.out.println(root.data);
         print(root.right);
+    }
+
+    //Size method For checking all nodes are added or Not
+    public int size(Node node) {
+
+        if (node == null)
+            return 0;
+        else
+            return(size(node.left) + 1 + size(node.right));
     }
 }
